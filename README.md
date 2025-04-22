@@ -1,36 +1,76 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Pie Services
 
-## Getting Started
+Modern web application to showcase technology services with an attractive and responsive user interface.
 
-First, run the development server:
+## 🚀 Technologies
+
+- [Next.js](https://nextjs.org/) - React Framework
+- [TypeScript](https://www.typescriptlang.org/) - Typed JavaScript Superset
+- [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS Framework
+- [ESLint](https://eslint.org/) - JavaScript/TypeScript Linter
+- [Prettier](https://prettier.io/) - Code Formatter
+
+## 📋 Prerequisites
+
+- [Node.js](https://nodejs.org/) (version 18 or higher)
+- [npm](https://www.npmjs.com/) (included with Node.js)
+
+## 🔧 Installation
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/your-username/pie-services.git
+cd pie-services
+```
+
+2. Install dependencies:
+
+```bash
+npm install
+```
+
+## 🏃‍♂️ Running the Project
+
+To run the project in development mode:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The application will be available at [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📦 Available Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run start` - Start production server
+- `npm run lint` - Run linter
+- `npm run format` - Format code with Prettier
+- `npm run format:check` - Check code formatting
 
-## Learn More
+## 🎨 Project Structure
 
-To learn more about Next.js, take a look at the following resources:
+```
+pie-services/
+├── app/
+│   ├── components/     # Application components
+│   │   ├── ui/        # Reusable UI components
+│   │   └── shared/    # Shared components
+│   ├── lib/           # Utilities and configurations
+│   └── page.tsx       # Main page
+├── public/            # Static files
+└── package.json       # Dependencies and scripts
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🤝 Contributing
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. Fork the project
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-## Deploy on Vercel
+## 📄 License
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
