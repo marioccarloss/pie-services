@@ -2,27 +2,24 @@
 
 import { Typography } from "@/components/ui";
 import Icon from "@/components/ui/icon";
-import { getServicesData } from "@/lib/api-mock";
+import { getServicesData, type Feature, type StrapiResponse } from "@/lib/services-api";
 import Image from "next/image";
 import { use, useState } from "react";
 
 const servicesDataPromise = getServicesData();
 
 const Services = () => {
-  const [activeFeature, setActiveFeature] = useState<number>(1);
   const {
-    title,
-    subtitle,
-    description,
-    expertImage: { src: imageSrc, alt: imageAlt },
-    features,
-  } = use(servicesDataPromise);
+    data: { title, subtitle, description, expertImage, feature },
+  } = use(servicesDataPromise) as StrapiResponse;
+
+  const [activeFeature, setActiveFeature] = useState<number>(feature[0].id);
 
   const handleFeatureSelect = (id: number) => {
-    setActiveFeature(activeFeature === id ? 1 : id);
+    setActiveFeature(activeFeature === id ? feature[0].id : id);
   };
 
-  const selectedFeature = features.find(feature => feature.id === activeFeature);
+  const selectedFeature = feature.find((feature: Feature) => feature.id === activeFeature);
 
   return (
     <div className="container mx-auto px-4 py-16">
@@ -44,7 +41,7 @@ const Services = () => {
           align="center"
           className="max-w-2xl mx-auto !text-gray-600"
         >
-          {description}
+          {description[0].children[0].text}
         </Typography>
       </div>
 
@@ -69,8 +66,8 @@ const Services = () => {
           >
             <div className="absolute inset-0 bg-gray-100 rounded-full overflow-hidden">
               <Image
-                src={imageSrc}
-                alt={imageAlt}
+                src={`${process.env.NEXT_PUBLIC_STRAPI_URL}${expertImage[0].formats.large.url}`}
+                alt="Expert"
                 layout="fill"
                 objectFit="cover"
                 className="rounded-full"
@@ -81,7 +78,7 @@ const Services = () => {
 
         {/* Lista de características */}
         <div className="space-y-4">
-          {features.map(({ id, title }) => (
+          {feature.map(({ id, title }: Feature) => (
             <div
               key={id}
               onClick={() => handleFeatureSelect(id)}
