@@ -66,7 +66,7 @@ const Services = () => {
           >
             <div className="absolute inset-0 bg-gray-100 rounded-full overflow-hidden">
               <Image
-                src={`${process.env.NEXT_PUBLIC_STRAPI_URL}${expertImage[0].formats.large.url}`}
+                src={`${process.env.NEXT_PUBLIC_STRAPI_URL}${expertImage[0].url}`}
                 alt="Expert"
                 layout="fill"
                 objectFit="cover"
